@@ -2,14 +2,14 @@ import { Schema, model } from 'mongoose';
 import { v4 } from 'uuid';
 
 const booksSchema = new Schema({
-  id: { type: String, default: v4() },
+  _id: { type: String },
   title: { type: String },
   author: { type: String },
-  publishedYear: { type: String, default: +new Date() },
+  publishedYear: { type: Number },
   publisher: { type: String },
   genres: { type: Array },
 });
 
-const bookModel = model('books', booksSchema);
+const BookModel = model('books', booksSchema);
 
-export default bookModel;
+export default BookModel;
