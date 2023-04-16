@@ -17,6 +17,7 @@ describe('Get All Book Controller', () => {
     app = await main();
   });
   afterAll(async () => {
+    await mongoose.disconnect();
     await mongoose.connection.close();
   });
   beforeEach(async () => {

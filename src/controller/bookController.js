@@ -1,7 +1,7 @@
 import { v4 } from 'uuid';
 import BookModel from '../schema/books.js';
 import {
-  checkInputHasValues, checkInputIsArray, trimStrings,
+  checkInputHasValues, trimStrings,
 } from '../utils/utils.js';
 
 export const getAllBook = async (req, res) => {
