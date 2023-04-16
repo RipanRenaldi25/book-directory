@@ -8,6 +8,8 @@ const main = async () => {
 
   const app = express();
   const port = process.env.PORT || 3000;
+  app.use(express.urlencoded({ extended: false }));
+  app.use(express.json());
   app.use('/books', bookRouter);
 
   try {
@@ -16,5 +18,6 @@ const main = async () => {
     console.log(e.message);
   }
   app.listen(port, () => console.log('server running on port 3000'));
+  return app;
 };
 export default main;
